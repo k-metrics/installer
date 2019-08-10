@@ -55,7 +55,7 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
   require_package("BiocManager")
   require_package("tidyverse")
 
-  # Installed packages、
+  # Installed packages
   installed <- installed.packages() %>% 
     as.data.frame(stringsAsFactors = FALSE) %>% 
     .$Package %>% 
@@ -86,9 +86,7 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
   
   # if (!is.null(install)) {
   if (length(install)) {
-    sink(file = "./install_packages.log")
     install.packages(install[!(install %in% installed)])
-    sink()
   }
   
 } # end of function
