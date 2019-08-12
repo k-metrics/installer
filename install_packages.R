@@ -37,11 +37,12 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
     dplyr::filter(rep == "CRAN")
 
   # Select package to install
-  install <- switch(type,
-         "tidyverse" = packages[packages$type %in%  c("tidyverse"), ],
-         "verse" = packages[packages$type %in% c("tidyverse", "verse"), ],
-         "mlwr" = packages[packages$type %in% c("tidyverse", "verse", "mlwr"), ],
-         "tidyomdels" = packages[packages$type %in% c("tidyverse", "verse", "mlwr", "tidymodels"), ]
+  install <- switch(tolower(type)s,
+                    "tidyverse" = packages[packages$type %in%  c("tidyverse"), ],
+                    "verse" = packages[packages$type %in% c("tidyverse", "verse"), ],
+                    "mlwr" = packages[packages$type %in% c("tidyverse", "verse", "mlwr"), ],
+                    "tidyomdels" = packages[packages$type %in% c("tidyverse", "verse", "mlwr", "tidymodels"), ],
+                    stop('Select type, "tidyverse", "verse", "mlwr" or "tidymodels"')
   )
 
   # Add tools package, if required
