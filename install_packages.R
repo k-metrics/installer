@@ -41,7 +41,7 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
                     "tidyverse" = packages[packages$type %in%  c("tidyverse"), ],
                     "verse" = packages[packages$type %in% c("tidyverse", "verse"), ],
                     "mlwr" = packages[packages$type %in% c("tidyverse", "verse", "mlwr"), ],
-                    "tidyomdels" = packages[packages$type %in% c("tidyverse", "verse", "mlwr", "tidymodels"), ],
+                    "tidymodels" = packages[packages$type %in% c("tidyverse", "verse", "mlwr", "tidymodels"), ],
                     stop('Select type, "tidyverse", "verse", "mlwr" or "tidymodels"')
   )
 
