@@ -88,6 +88,7 @@ install_packages(type = "tidyverse", tools = FALSE)
 | adabag       | Applies Multiclass AdaBoost.M1, SAMME and Bagging                                                   |
 | arules       | Mining Association Rules and Frequent Itemsets                                                      |
 | C50          | C5.0 Decision Trees and Rule-Based Models                                                           |
+| car          | Companion to Applied Regression                                                                     |
 | caret        | Classification and Regression Training                                                              |
 | class        | Functions for Classification                                                                        |
 | data.table   | Extension of ‘data.frame’                                                                           |
@@ -104,6 +105,7 @@ install_packages(type = "tidyverse", tools = FALSE)
 | kernlab      | Kernel-Based Machine Learning Lab                                                                   |
 | kknn         | Weighted k-Nearest Neighbors                                                                        |
 | klaR         | Classification and Visualization                                                                    |
+| MLmetrics    | Machine Learning Evaluation Metrics                                                                 |
 | modeest      | Mode Estimation                                                                                     |
 | neuralnet    | Training of Neural Networks                                                                         |
 | psych        | Procedures for Psychological, Psychometric, and Personality Research                                |
@@ -152,6 +154,7 @@ install_packages(type = "tidyverse", tools = FALSE)
 | ggrepel       | Repulsive Text and Label Geoms for ‘ggplot2’     |
 | gridExtra     | Miscellaneous Functions for “Grid” Graphics      |
 | learnr        | Interactive Tutorials for R                      |
+| RColorBrewer  | ColorBrewer Palettes                             |
 | skimr         | Compact and Flexible Summaries of Data           |
 | summarytools  | Tools to Quickly and Neatly Summarize Data       |
 
@@ -160,14 +163,26 @@ install_packages(type = "tidyverse", tools = FALSE)
 # 備考
 
 パッケージが既にインストールされている場合は依存ファイルを除いてインストールされませんので、必要に応じてパッケージのアップデートを行ってください。また、データファイルの定義を書き換えることでインストールするパッケージを変更することができます。必要に応じて修正してください。ただし、リポジトリはCRAN限定です。  
-　  
-なお、不明点などは [データ分析勉強
-<i class="fa fa-external-link"></i>](https://sites.google.com/site/kantometrics/home)
-まで、または、本リポジトリのissues にてお問い合わせください。  
+　
+
+# License
+
+[CC BY-NC-SA 4.0
+<i class="fa fa-external-link"></i>](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
+, Sampo Suzuki
+
+  - 表示
+      - あなたは
+        適切なクレジットを表示し、ライセンスへのリンクを提供し、変更があったらその旨を示さなければなりません。これらは合理的であればどのような方法で行っても構いませんが、許諾者があなたやあなたの利用行為を支持していると示唆するような方法は除きます。
+  - 非営利
+      - あなたは営利目的でこの資料を利用してはなりません。
+  - 継承
+      - もしあなたがこの資料をリミックスしたり、改変したり、加工した場合には、あなたはあなたの貢献部分を元の作品と同じライセンスの下に頒布しなければなりません。
+
 　
 
 -----
 
-[CC
-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
-, Sampo Suzuki
+不明点などは [データ分析勉強
+<i class="fa fa-external-link"></i>](https://sites.google.com/site/kantometrics/home)
+まで、または、本リポジトリの issues にてお問い合わせください。
