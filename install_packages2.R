@@ -72,8 +72,9 @@ install_packages2 <- function(type = "tidyverse", tools = FALSE, GitHub = FALSE,
   
   # Install packages from GitHub
   if (GitHub == TRUE) {
-    print(paste("Installing from GitHub"), github_packages$package)
-    devtools::install_github(github_packages$package)
+    print(paste("Installing from GitHub", github_packages$package))
+    # devtools::install_github(github_packages$package)
+    remotes::install_github(github_packages$package)
   }
   
   # Install TinyTex
