@@ -17,7 +17,8 @@ require_package <- function(pkg = NULL) {
 } # end of function
 
 
-install_packages <- function(type = "tidyverse", tools = FALSE) {
+install_packages2 <- function(type = "tidyverse", tools = FALSE, GitHub = FALSE,
+                              tex = FALSE) {
 
   # Require packages
   require_package("devtools")
@@ -35,6 +36,11 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
     read.csv(encoding = "UTF-8", stringsAsFactors = FALSE) %>% 
     dplyr::select(package, type, rep) %>% 
     dplyr::filter(rep == "CRAN")
+  
+  github_packages <- "./packages.csv" %>% 
+    read.csv(encoding = "UTF-8", stringsAsFactors = FALSE) %>% 
+    dplyr::select(package, type, rep) %>% 
+    dplyr::filter(rep == "GitHub")
 
   # Select package to install
   install <- switch(tolower(type),
@@ -42,7 +48,8 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
                     "verse" = packages[packages$type %in% c("tidyverse", "verse"), ],
                     "mlwr" = packages[packages$type %in% c("tidyverse", "verse", "mlwr"), ],
                     "tidymodels" = packages[packages$type %in% c("tidyverse", "verse", "mlwr", "tidymodels"), ],
-                    stop('Select type, "tidyverse", "verse", "mlwr" or "tidymodels"')
+                    "all" = packages,
+                    stop('Select type, "tidyverse", "verse", "mlwr", "tidymodels" or "all"')
   )
 
   # Add tools package, if required
@@ -63,5 +70,16 @@ install_packages <- function(type = "tidyverse", tools = FALSE) {
     print("No packages to install.")
   }
   
+  # Install packages from GitHub
+  if (GitHub == TRUE) {
+    print(paste("Installing from GitHub"), github_packages$package)
+    devtools::install_github(github_packages$package)
+  }
+  
+  # Install TinyTex
+  if (tex == TRUE) {
+    print("Installing TinyTex")
+    tinytex::install_tinytex()
+  }
 } # end of function
 
