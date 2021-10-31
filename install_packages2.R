@@ -1,9 +1,11 @@
 # Command line Usage
 #   > source('install_packages.R', encoding = 'UTF-8')
-#   > install_packages(type = "tidyverse", tools = FALSE)
+#   > install_packages(type = "tidyverse", tools = FALSE, GitHub = FALSE, tex = FALSE)
 #
-#       type  : "tidyverse"(default), "verse", "mlwr", "tidymodels"
+#       type  : "tidyverse"(default), "verse", "mlwr", "tidymodels" or "all"
 #       tools : FALSE(default) or TRUE
+#       GitHub : FALSE(default) or TRUE, install packages from GitHub
+#       tex : FALSE(default) or TRUE, install tinytex package and tinytex
 #
 
 require_package <- function(pkg = NULL) {
